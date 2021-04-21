@@ -119,7 +119,8 @@ Proof.
   - by apply countable_choice; apply prod_count; apply/enum_count/(inh_enum (cnt 0)); exists cnt.
   have [eqC _]:= classic_eqClass choice.
   pose eqQ:= @Equality.Pack Q eqC.
-  by have := @exists_minsec_eqT eqQ cnt sur.
+  by have := @exists_minsec_eqT (eqQ Q) cnt sur.
+  
 Qed.
 
 Lemma count_eqT_choice (Q: eqType) T: Q \is_countable ->

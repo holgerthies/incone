@@ -96,7 +96,7 @@ Section classical_lemmas.
       by have []:= mod phi phifd.
     have [ecQ' _]:= @classic_eqClass Q' full_choice.
     pose etQ' := Equality.Pack ecQ'.
-    have [_ md]:= @minm_modmod etQ' Q A A' F cnt sec ms mu mod.
+    have [_ md]:= @minm_modmod (etQ' Q) Q A A' F cnt sec ms mu mod.
     split => // phi _ [phifd <-] q'.
     have [ | n md']//:= md phi (fun q' => init_seg (mu phi q')) _ q'.
     exists (init_seg (mu phi q')) => psi coin mfpsi [psifd <-].

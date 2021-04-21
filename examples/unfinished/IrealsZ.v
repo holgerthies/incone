@@ -1077,13 +1077,14 @@ Proof.
 Qed.
 
 Definition IR_RQ_rlzrM' := (fun phi neps => IR_RQ_rlzrM (speedup neps.1 7) phi neps.2).
-Canonical eqQ : eqType.
-  apply (@Equality.Pack Q).
-  apply eqdec_eqClass => q q'.
-  case q => m n; case q' => m' n'.
-  case (Z.eq_dec m m') => e1; case (Pos.eq_dec n n') => e2; try by right;case.
-  by rewrite e1 e2;auto.
-Defined.
+(* Canonical eqQ : eqType. *)
+(*   apply (@Equality.Pack Q). *)
+(*   apply eqdec_eqClass => q q'. *)
+(*   case q => m n; case q' => m' n'. *)
+(*   case (Z.eq_dec m m') => e1; case (Pos.eq_dec n n') => e2; try by right;case. *)
+(*   by rewrite e1 e2;auto. *)
+(*   apply Q. *)
+(* Defined. *)
 
 Lemma speedup_correct : forall (x : IR) (phi : B_(IR)) s, (phi \is_name_of x) -> (fun (p : Q_(IR)) => (phi (speedup p s)))  \is_name_of x.
 Proof.

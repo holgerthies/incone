@@ -138,6 +138,7 @@ Section construct_function_names.
                 | right _ => false
                 end).
     by move => q q'; apply/(iffP idP); case: eq_dec.
+    apply X.
   Defined.
 
   Definition construct_associate M
